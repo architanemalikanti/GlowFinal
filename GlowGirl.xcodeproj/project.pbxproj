@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		897CCC4C2E0777F600D5274B /* LoginView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897CCC4B2E0777F600D5274B /* LoginView1.swift */; };
+		899C39552E1CFAF8003DBF52 /* GlowGirlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39542E1CFAF8003DBF52 /* GlowGirlApp.swift */; };
+		899C395D2E1CFB2F003DBF52 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C395C2E1CFB2F003DBF52 /* AnalysisView.swift */; };
+		899C395F2E1CFB32003DBF52 /* GlowGirlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C395E2E1CFB32003DBF52 /* GlowGirlViewModel.swift */; };
+		899C39612E1CFB34003DBF52 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39602E1CFB34003DBF52 /* MainAppView.swift */; };
+		899C39632E1CFB38003DBF52 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39622E1CFB38003DBF52 /* DashboardView.swift */; };
+		899C39652E1CFB3A003DBF52 /* DashboardHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */; };
+		899C39672E1CFB3B003DBF52 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39662E1CFB3B003DBF52 /* ProfileView.swift */; };
+		899C396F2E1CFB44003DBF52 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C396E2E1CFB44003DBF52 /* MessageBubble.swift */; };
+		899C39742E1CFB4D003DBF52 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39702E1CFB4C003DBF52 /* AuthManager.swift */; };
+		899C397A2E1FCB5A003DBF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39792E1FCB5A003DBF52 /* ContentView.swift */; };
+		899C397C2E1FCB86003DBF52 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C397B2E1FCB86003DBF52 /* APIServices.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		89723D962E01F6E100363ED7 /* GlowGirl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GlowGirl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		897CCC4B2E0777F600D5274B /* LoginView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView1.swift; sourceTree = "<group>"; };
+		899C39542E1CFAF8003DBF52 /* GlowGirlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowGirlApp.swift; sourceTree = "<group>"; };
+		899C395C2E1CFB2F003DBF52 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		899C395E2E1CFB32003DBF52 /* GlowGirlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowGirlViewModel.swift; sourceTree = "<group>"; };
+		899C39602E1CFB34003DBF52 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		899C39622E1CFB38003DBF52 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHomeView.swift; sourceTree = "<group>"; };
+		899C39662E1CFB3B003DBF52 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		899C396E2E1CFB44003DBF52 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		899C39702E1CFB4C003DBF52 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		899C39712E1CFB4D003DBF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		899C39732E1CFB4D003DBF52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		899C39792E1FCB5A003DBF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		899C397B2E1FCB86003DBF52 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89723D932E01F6E100363ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89723D8D2E01F6E100363ED7 = {
+			isa = PBXGroup;
+			children = (
+				899C397B2E1FCB86003DBF52 /* APIServices.swift */,
+				899C396E2E1CFB44003DBF52 /* MessageBubble.swift */,
+				899C395C2E1CFB2F003DBF52 /* AnalysisView.swift */,
+				899C395E2E1CFB32003DBF52 /* GlowGirlViewModel.swift */,
+				899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */,
+				899C39622E1CFB38003DBF52 /* DashboardView.swift */,
+				899C39792E1FCB5A003DBF52 /* ContentView.swift */,
+				899C39712E1CFB4D003DBF52 /* Assets.xcassets */,
+				899C39722E1CFB4D003DBF52 /* Preview Content */,
+				899C39702E1CFB4C003DBF52 /* AuthManager.swift */,
+				899C39602E1CFB34003DBF52 /* MainAppView.swift */,
+				899C39662E1CFB3B003DBF52 /* ProfileView.swift */,
+				899C39542E1CFAF8003DBF52 /* GlowGirlApp.swift */,
+				897CCC4B2E0777F600D5274B /* LoginView1.swift */,
+				89723D972E01F6E100363ED7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89723D972E01F6E100363ED7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89723D962E01F6E100363ED7 /* GlowGirl.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		899C39722E1CFB4D003DBF52 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				899C39732E1CFB4D003DBF52 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89723D952E01F6E100363ED7 /* GlowGirl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89723DA42E01F6E200363ED7 /* Build configuration list for PBXNativeTarget "GlowGirl" */;
+			buildPhases = (
+				89723D922E01F6E100363ED7 /* Sources */,
+				89723D932E01F6E100363ED7 /* Frameworks */,
+				89723D942E01F6E100363ED7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GlowGirl;
+			productName = GlowGirl;
+			productReference = 89723D962E01F6E100363ED7 /* GlowGirl.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89723D8E2E01F6E100363ED7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					89723D952E01F6E100363ED7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 89723D912E01F6E100363ED7 /* Build configuration list for PBXProject "GlowGirl" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89723D8D2E01F6E100363ED7;
+			productRefGroup = 89723D972E01F6E100363ED7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89723D952E01F6E100363ED7 /* GlowGirl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89723D942E01F6E100363ED7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89723D922E01F6E100363ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				897CCC4C2E0777F600D5274B /* LoginView1.swift in Sources */,
+				899C39742E1CFB4D003DBF52 /* AuthManager.swift in Sources */,
+				899C397A2E1FCB5A003DBF52 /* ContentView.swift in Sources */,
+				899C39612E1CFB34003DBF52 /* MainAppView.swift in Sources */,
+				899C396F2E1CFB44003DBF52 /* MessageBubble.swift in Sources */,
+				899C39652E1CFB3A003DBF52 /* DashboardHomeView.swift in Sources */,
+				899C39632E1CFB38003DBF52 /* DashboardView.swift in Sources */,
+				899C39552E1CFAF8003DBF52 /* GlowGirlApp.swift in Sources */,
+				899C39672E1CFB3B003DBF52 /* ProfileView.swift in Sources */,
+				899C395F2E1CFB32003DBF52 /* GlowGirlViewModel.swift in Sources */,
+				899C395D2E1CFB2F003DBF52 /* AnalysisView.swift in Sources */,
+				899C397C2E1FCB86003DBF52 /* APIServices.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		89723DA22E01F6E200363ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89723DA32E01F6E200363ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89723DA52E01F6E200363ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
+				DEVELOPMENT_TEAM = FRR7RJ635S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "used for allowing the user to talk.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "used for speech to text recognition when user vents";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GlowGirl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89723DA62E01F6E200363ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
+				DEVELOPMENT_TEAM = FRR7RJ635S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "used for allowing the user to talk.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "used for speech to text recognition when user vents";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GlowGirl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89723D912E01F6E100363ED7 /* Build configuration list for PBXProject "GlowGirl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89723DA22E01F6E200363ED7 /* Debug */,
+				89723DA32E01F6E200363ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89723DA42E01F6E200363ED7 /* Build configuration list for PBXNativeTarget "GlowGirl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89723DA52E01F6E200363ED7 /* Debug */,
+				89723DA62E01F6E200363ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89723D8E2E01F6E100363ED7 /* Project object */;
+}
