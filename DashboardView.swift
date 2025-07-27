@@ -15,6 +15,7 @@ struct DashboardView: View {
                     AnalyzingView()
                 case .recommendations:
                     AnalysisView()
+                        .environmentObject(glowViewModel)
                 }
             }
             .environmentObject(glowViewModel)
