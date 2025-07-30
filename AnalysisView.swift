@@ -168,10 +168,21 @@ struct AnalysisView: View {
                                         Text(profiles[index].name)
                                             .font(.system(size: 12, weight: .semibold))
                                             .foregroundColor(currentProfileIndex == index ? .pink.opacity(0.8) : .pink.opacity(0.5))
+<<<<<<< Updated upstream
+                                    }
+=======
+<<<<<<< HEAD
+                        }
+>>>>>>> Stashed changes
+                                }
+                            }
+                        }
+=======
                                     }
                                 }
                             }
                         }
+>>>>>>> a5513a5 (changed analysisview)
                         .padding(.top, 10)
                     }
                 }
@@ -184,7 +195,15 @@ struct AnalysisView: View {
                     // Page 0: Explore (Other Profiles)
                     ExplorePage(profiles: profiles, currentProfileIndex: $currentProfileIndex)
                         .tag(0)
+<<<<<<< Updated upstream
                         .onChange(of: currentProfileIndex) { _ in
+=======
+<<<<<<< HEAD
+                        .onChange(of: currentProfileIndex) { oldValue, newValue in
+=======
+                        .onChange(of: currentProfileIndex) { _ in
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                             // Auto-navigate to nakshatra page when profile changes
                             withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
                                 selectedPage = 1
@@ -260,6 +279,45 @@ struct NavigationButton: View {
     var body: some View {
         Button(action: action) {
             VStack(spacing: 6) {
+<<<<<<< Updated upstream
+                ZStack {
+                    Circle()
+                        .fill(
+                            LinearGradient(
+=======
+<<<<<<< HEAD
+                               ZStack {
+                                   Circle()
+                                       .fill(
+                                           LinearGradient(
+>>>>>>> Stashed changes
+                                colors: isSelected ? 
+                                    [.pink.opacity(0.8), .purple.opacity(0.8)] : 
+                                    [.pink.opacity(0.2), .purple.opacity(0.2)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .frame(width: 50, height: 50)
+                        .scaleEffect(isSelected ? 1.1 : 1.0)
+                    
+                    Image(systemName: icon)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(isSelected ? .white : .pink.opacity(0.6))
+                }
+                
+                Text(title)
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(isSelected ? .pink.opacity(0.8) : .pink.opacity(0.5))
+<<<<<<< Updated upstream
+            }
+        }
+    }
+=======
+                           }
+                       }
+                   }
+=======
                 ZStack {
                     Circle()
                         .fill(
@@ -285,6 +343,8 @@ struct NavigationButton: View {
             }
         }
     }
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
 }
 
 // MARK: - Explore Page
@@ -338,8 +398,18 @@ struct ExplorePage: View {
                             insertion: .scale.combined(with: .opacity),
                             removal: .scale.combined(with: .opacity)
                         ))
+<<<<<<< Updated upstream
                 }
                 
+=======
+<<<<<<< HEAD
+                                }
+                                
+=======
+                }
+                
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 // Recent connections
                 RecentConnectionsSection(profiles: sameNakshatraProfiles)
             }
@@ -363,8 +433,19 @@ struct SearchSection: View {
     var body: some View {
         VStack(spacing: 18) {
             // Search header
+<<<<<<< Updated upstream
             HStack {
                 Text("find ur cosmic sisters ✨")
+=======
+<<<<<<< HEAD
+                    HStack {
+                Text("find ur cosmic sisters ✨")
+                                .font(.system(size: 20, weight: .bold))
+                                .foregroundStyle(
+=======
+            HStack {
+                Text("find ur cosmic sisters ✨")
+>>>>>>> Stashed changes
                     .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(
                         LinearGradient(
@@ -374,6 +455,174 @@ struct SearchSection: View {
                         )
                     )
                 
+<<<<<<< Updated upstream
+=======
+                Spacer()
+                
+                Text("🔍")
+                    .font(.system(size: 18))
+                    .scaleEffect(isSearching ? 1.2 : 1.0)
+                    .animation(
+                        .easeInOut(duration: 1.5)
+                        .repeatForever(autoreverses: true),
+                        value: isSearching
+                    )
+            }
+            
+            // Search bar
+            HStack(spacing: 12) {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.pink.opacity(0.6))
+                
+                TextField("search by name or nakshatra...", text: $searchText)
+                    .font(.system(size: 16, weight: .medium))
+                    .onChange(of: searchText) { _ in
+                        showingResults = !searchText.isEmpty
+                    }
+                
+                if !searchText.isEmpty {
+                    Button(action: {
+                        searchText = ""
+                        showingResults = false
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 16))
+                            .foregroundColor(.pink.opacity(0.6))
+                    }
+                }
+            }
+            .padding(.horizontal, 18)
+            .padding(.vertical, 16)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.white.opacity(0.9))
+                    .stroke(
+                        LinearGradient(
+                            colors: [.pink.opacity(0.3), .purple.opacity(0.2)],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ),
+                        lineWidth: 1.5
+                    )
+            )
+            .shadow(color: .pink.opacity(0.1), radius: 8, x: 0, y: 4)
+            
+            // Search results
+            if showingResults && !results.isEmpty {
+                VStack(spacing: 12) {
+                    ForEach(results, id: \.name) { profile in
+                        SearchResultRow(profile: profile) {
+                            onProfileSelect(profile)
+                        }
+                    }
+                }
+                .transition(.asymmetric(
+                    insertion: .scale.combined(with: .opacity),
+                    removal: .scale.combined(with: .opacity)
+                ))
+            } else if showingResults && results.isEmpty {
+                VStack(spacing: 12) {
+                    Text("no cosmic sisters found 💫")
+                        .font(.system(size: 16, weight: .medium))
+                        .foregroundColor(.purple.opacity(0.7))
+                    
+                    Text("try searching for a different name or nakshatra")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.purple.opacity(0.5))
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.vertical, 20)
+                .transition(.asymmetric(
+                    insertion: .scale.combined(with: .opacity),
+                    removal: .scale.combined(with: .opacity)
+                ))
+            }
+        }
+        .onAppear {
+            isSearching = true
+        }
+    }
+}
+
+// MARK: - Search Result Row
+struct SearchResultRow: View {
+    let profile: UserProfile
+    let onTap: () -> Void
+    @State private var isFollowing = false
+    
+    var body: some View {
+        HStack(spacing: 15) {
+            // Avatar
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: [.pink.opacity(0.8), .purple.opacity(0.8)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(width: 45, height: 45)
+                .overlay(
+                    Text(profile.name.prefix(1).uppercased())
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.white)
+                )
+            
+            // Profile info
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text(profile.name)
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(.purple.opacity(0.8))
+                    
+                    Text("•")
+                        .font(.system(size: 14))
+                        .foregroundColor(.pink.opacity(0.6))
+                    
+                    Text(profile.nakshatra)
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundColor(.pink.opacity(0.7))
+                }
+                
+                Text(profile.currentStatus)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundColor(.purple.opacity(0.6))
+                    .lineLimit(1)
+            }
+            
+            Spacer()
+            
+            // Follow button
+            Button(action: {
+                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
+                    isFollowing.toggle()
+                }
+            }) {
+                Text(isFollowing ? "following" : "follow")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundColor(isFollowing ? .purple.opacity(0.7) : .white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(
+                        Capsule()
+                            .fill(
+                                isFollowing ? 
+                                    LinearGradient(
+                                        colors: [Color.purple.opacity(0.1), Color.purple.opacity(0.05)],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    ) : 
+>>>>>>> a5513a5 (changed analysisview)
+                                    LinearGradient(
+                                        colors: [.pink, .purple],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+<<<<<<< HEAD
+                                )
+                            
+>>>>>>> Stashed changes
                 Spacer()
                 
                 Text("🔍")
@@ -536,14 +785,29 @@ struct SearchResultRow: View {
                                         endPoint: .trailing
                                     )
                             )
+=======
+                            )
+>>>>>>> a5513a5 (changed analysisview)
                     )
                     .overlay(
                         Capsule()
                             .stroke(
                                 isFollowing ? .purple.opacity(0.3) : .clear,
+<<<<<<< Updated upstream
                                 lineWidth: 1
                             )
                     )
+=======
+<<<<<<< HEAD
+                            lineWidth: 1
+                        )
+                )
+=======
+                                lineWidth: 1
+                            )
+                    )
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
             }
         }
         .padding(.horizontal, 16)
@@ -564,8 +828,18 @@ struct EmotionalAvailabilitySection: View {
     @Binding var isAvailable: Bool
     
     var body: some View {
+<<<<<<< Updated upstream
         VStack(spacing: 20) {
             HStack {
+=======
+<<<<<<< HEAD
+            VStack(spacing: 20) {
+                HStack {
+=======
+        VStack(spacing: 20) {
+            HStack {
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 VStack(alignment: .leading, spacing: 6) {
                     Text("ready to date? 💕")
                         .font(.system(size: 20, weight: .bold))
@@ -580,6 +854,20 @@ struct EmotionalAvailabilitySection: View {
                     Text(isAvailable ? "open to new connections ✨" : "focusing on self-love 💅")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.purple.opacity(0.7))
+<<<<<<< HEAD
+                }
+                
+                Spacer()
+                
+                Toggle("", isOn: $isAvailable)
+                    .tint(.pink)
+                    .scaleEffect(1.2)
+                    .animation(.spring(response: 0.6), value: isAvailable)
+<<<<<<< Updated upstream
+            }
+=======
+                }
+=======
                 }
                 
                 Spacer()
@@ -589,6 +877,8 @@ struct EmotionalAvailabilitySection: View {
                     .scaleEffect(1.2)
                     .animation(.spring(response: 0.6), value: isAvailable)
             }
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
         }
         .padding(20)
         .background(
@@ -669,8 +959,18 @@ struct RecentConnectionRow: View {
         HStack(spacing: 15) {
             // Avatar
             Circle()
+<<<<<<< Updated upstream
                 .fill(
                     LinearGradient(
+=======
+<<<<<<< HEAD
+                            .fill(
+                                LinearGradient(
+=======
+                .fill(
+                    LinearGradient(
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                         colors: [.pink.opacity(0.7), .purple.opacity(0.7)],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
@@ -727,10 +1027,24 @@ struct CurrentProfileCard: View {
                         .foregroundStyle(
                             LinearGradient(
                                 colors: [.pink, .purple],
+<<<<<<< Updated upstream
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
+=======
+<<<<<<< HEAD
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+=======
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                     
                     Text(profile.currentMood)
                         .font(.system(size: 16, weight: .medium))
@@ -857,6 +1171,7 @@ struct EmotionalAvailabilityCard: View {
                     .tint(.pink)
                     .scaleEffect(1.3)
                     .animation(.spring(response: 0.6), value: isAvailable)
+<<<<<<< HEAD
             }
         }
         .padding(25)
@@ -928,6 +1243,79 @@ struct NakshatraProfilePage: View {
                 .padding(.bottom, 120)
             }
         }
+=======
+            }
+        }
+        .padding(25)
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(
+                    LinearGradient(
+                        colors: [Color.white.opacity(0.9), Color.purple.opacity(0.05)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .shadow(color: .purple.opacity(0.15), radius: 12, x: 0, y: 6)
+        )
+    }
+}
+
+// MARK: - Nakshatra Profile Page
+struct NakshatraProfilePage: View {
+    let profile: UserProfile
+    @State private var scrollOffset: CGFloat = 0
+    
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                // Dynamic header that changes color based on scroll
+                VStack(spacing: 20) {
+                    Text(profile.nakshatra.uppercased())
+                        .font(.system(size: 42, weight: .black))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [.red, .orange],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                    
+                    Text("the cosmic horsemen")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.orange.opacity(0.9))
+                    
+                    Text("fast • free • unstoppable")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.red.opacity(0.7))
+                }
+                .padding(.top, 30)
+                .padding(.bottom, 40)
+                .background(
+                    LinearGradient(
+                        colors: [.red.opacity(0.3), .orange.opacity(0.2), .pink.opacity(0.1)],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                
+                // Content cards
+                VStack(spacing: 25) {
+                    // Current Year Prediction
+                    CurrentYearPredictionCard()
+                    
+                    // Life Timeline
+                    LifeTimelineCard(events: profile.lifeEvents)
+                    
+                    // Nakshatra Traits
+                    NakshatraTraitsCard()
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 30)
+                .padding(.bottom, 120)
+            }
+        }
+>>>>>>> a5513a5 (changed analysisview)
         .background(
             LinearGradient(
                 colors: [.pink.opacity(0.1), .purple.opacity(0.1), .orange.opacity(0.05)],
@@ -1005,11 +1393,27 @@ struct PredictionTag: View {
     var body: some View {
         Text(text)
             .font(.system(size: 12, weight: .bold))
+<<<<<<< Updated upstream
             .foregroundColor(.white)
             .padding(.horizontal, 12)
             .padding(.vertical, 6)
             .background(
                 Capsule()
+=======
+<<<<<<< HEAD
+                    .foregroundColor(.white)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+                    .background(
+                        Capsule()
+=======
+            .foregroundColor(.white)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(
+                Capsule()
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                     .fill(color)
             )
     }
@@ -1023,6 +1427,7 @@ struct LifeTimelineCard: View {
         VStack(spacing: 20) {
             Text("ur life story 📖")
                 .font(.system(size: 22, weight: .bold))
+<<<<<<< HEAD
                 .foregroundStyle(
                     LinearGradient(
                         colors: [.purple, .pink],
@@ -1106,6 +1511,8 @@ struct NakshatraTraitsCard: View {
         VStack(spacing: 20) {
             Text("ur cosmic energy ⚡")
                 .font(.system(size: 22, weight: .bold))
+=======
+>>>>>>> a5513a5 (changed analysisview)
                 .foregroundStyle(
                     LinearGradient(
                         colors: [.red, .orange],
@@ -1115,6 +1522,92 @@ struct NakshatraTraitsCard: View {
                 )
             
             VStack(spacing: 15) {
+<<<<<<< HEAD
+=======
+                ForEach(Array(events.enumerated()), id: \.offset) { index, event in
+                    TimelineEventRow(
+                        event: event,
+                        isLast: index == events.count - 1
+                    )
+                }
+            }
+        }
+        .padding(25)
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(
+                    LinearGradient(
+                        colors: [Color.white.opacity(0.95), Color.purple.opacity(0.05)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .shadow(color: .purple.opacity(0.15), radius: 12, x: 0, y: 6)
+        )
+    }
+}
+
+struct TimelineEventRow: View {
+    let event: LifeEvent
+    let isLast: Bool
+    
+    var body: some View {
+        HStack(spacing: 15) {
+            VStack(spacing: 0) {
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            colors: [.pink, .purple],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .frame(width: 12, height: 12)
+                
+                if !isLast {
+                    Rectangle()
+                        .fill(.purple.opacity(0.3))
+                        .frame(width: 2, height: 40)
+                }
+            }
+            
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text(event.year)
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundColor(.pink)
+                    
+                    Text(event.event)
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.purple.opacity(0.8))
+                }
+                
+                Text(event.description)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundColor(.purple.opacity(0.6))
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+// MARK: - Nakshatra Traits Card
+struct NakshatraTraitsCard: View {
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("ur cosmic energy ⚡")
+                .font(.system(size: 22, weight: .bold))
+                .foregroundStyle(
+                    LinearGradient(
+                        colors: [.red, .orange],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+            
+            VStack(spacing: 15) {
+>>>>>>> a5513a5 (changed analysisview)
                 NakshatraTrait(
                     trait: "lightning-fast decisions",
                     description: "u see the path and take it before others notice",
@@ -1199,10 +1692,22 @@ struct NakshatraTrait: View {
 // MARK: - Fits Profile Page
 struct FitsProfilePage: View {
     let profile: UserProfile
+<<<<<<< Updated upstream
     @State private var sparkleOffset: CGFloat = 0
     @State private var currentVibe: VibeTheme = .elegant // Temporary for testing
     
     var body: some View {
+=======
+<<<<<<< HEAD
+    
+    var body: some View {
+        DeepikaGlamView()
+=======
+    @State private var sparkleOffset: CGFloat = 0
+    @State private var currentVibe: VibeTheme = .elegant // Temporary for testing
+    
+    var body: some View {
+>>>>>>> Stashed changes
         ZStack {
             // Dynamic background based on current vibe
             currentVibe.backgroundGradient
@@ -1304,6 +1809,10 @@ struct FitsProfilePage: View {
         default:
             return .elegant
         }
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
     }
 }
 
@@ -1330,8 +1839,18 @@ enum VibeTheme: CaseIterable {
         case .adventurous: return "free-spirited style that embraces bold choices. think leather, bright colors, and fearless energy."
         case .luxury: return "refined elegance with premium sophistication. think gold, diamonds, and timeless luxury."
         case .bold: return "confident, powerful presence that owns every room. think black, red, and unstoppable confidence."
+<<<<<<< Updated upstream
         }
     }
+=======
+<<<<<<< HEAD
+                }
+            }
+=======
+        }
+    }
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
     
     var emoji: String {
         switch self {
@@ -1349,9 +1868,21 @@ enum VibeTheme: CaseIterable {
         case .elegant:
             return LinearGradient(
                 colors: [Color.white.opacity(0.9), Color.cream.opacity(0.3), Color.pink.opacity(0.1)],
+<<<<<<< Updated upstream
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
+=======
+<<<<<<< HEAD
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+=======
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
         case .glamorous:
             return LinearGradient(
                 colors: [Color.pink.opacity(0.4), Color.purple.opacity(0.3), Color.orange.opacity(0.2)],
@@ -1413,10 +1944,32 @@ enum VibeTheme: CaseIterable {
         }
     }
     
+<<<<<<< Updated upstream
     var outfits: [VibeOutfit] {
         switch self {
         case .elegant:
             return [
+=======
+<<<<<<< HEAD
+    var outfits: [Outfit] {
+        switch self {
+        case .elegant:
+            return [
+                Outfit(
+                    name: "statement earrings moment",
+                    emoji: "🌟",
+                    description: "camera-ready glamour with that international star energy",
+                    vibe: "global icon",
+                    items: ["designer gown", "statement jewelry", "red carpet heels", "luxury clutch"],
+                    price: "$$$$$",
+                    category: "Red Carpet",
+                    colorScheme: [Color(red: 0.9, green: 0.6, blue: 0.8), Color(red: 1.0, green: 0.8, blue: 0.9)]
+=======
+    var outfits: [VibeOutfit] {
+        switch self {
+        case .elegant:
+            return [
+>>>>>>> Stashed changes
                 VibeOutfit(
                     category: "timeless elegance ✨",
                     outfit: "pearl necklace + silk blouse + tailored pants",
@@ -1440,10 +1993,15 @@ enum VibeTheme: CaseIterable {
                     earrings: "delicate gold chains for effortless charm",
                     vibe: "gentle strength",
                     colors: [.pink, .cream]
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 )
             ]
         case .glamorous:
             return [
+<<<<<<< Updated upstream
                 VibeOutfit(
                     category: "red carpet goddess 💫",
                     outfit: "sequin gown + statement jewelry + dramatic hair",
@@ -1452,6 +2010,37 @@ enum VibeTheme: CaseIterable {
                     vibe: "unapologetic glamour",
                     colors: [.pink, .purple]
                 ),
+=======
+<<<<<<< HEAD
+                Outfit(
+                    name: "sparkly heels for the win",
+                    emoji: "👑",
+                    description: "shimmery fits for when you're literally the moment",
+                    vibe: "cinematic glamour",
+                    items: ["sequin saree", "diamond jewelry", "sparkly dupatta", "glitter accessories"],
+                    price: "$$$$$",
+                    category: "Cinema",
+                    colorScheme: [Color(red: 1.0, green: 0.8, blue: 0.9), Color(red: 0.9, green: 0.7, blue: 1.0)]
+                ),
+                Outfit(
+                    name: "golden bangles stack",
+                    emoji: "💫",
+                    description: "sparkly vibes for when you're the main event",
+                    vibe: "radiant beauty",
+                    items: ["shimmer dress", "crystal jewelry", "sparkly shoes", "glitter makeup"],
+                    price: "$$$$",
+                    category: "Party",
+                    colorScheme: [Color(red: 1.0, green: 0.9, blue: 0.8), Color(red: 0.8, green: 0.8, blue: 1.0)]
+=======
+                VibeOutfit(
+                    category: "red carpet goddess 💫",
+                    outfit: "sequin gown + statement jewelry + dramatic hair",
+                    makeup: "bold red lips + winged liner + contoured cheeks",
+                    earrings: "chandelier earrings that demand attention",
+                    vibe: "unapologetic glamour",
+                    colors: [.pink, .purple]
+                ),
+>>>>>>> Stashed changes
                 VibeOutfit(
                     category: "party queen ✨",
                     outfit: "mini dress + strappy heels + leather jacket",
@@ -1467,10 +2056,28 @@ enum VibeTheme: CaseIterable {
                     earrings: "geometric statement pieces",
                     vibe: "runway ready",
                     colors: [.orange, .pink]
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 )
             ]
         case .natural:
             return [
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                Outfit(
+                    name: "princess polly halter mini dress",
+                    emoji: "🪩",
+                    description: "giving main character energy with that iconic disco glam aesthetic",
+                    vibe: "sparkly queen",
+                    items: ["disco ball dress", "sparkly jewelry", "glitter heels", "shimmer makeup"],
+                    price: "$$$$$",
+                    category: "Disco",
+                    colorScheme: [Color(red: 0.8, green: 0.8, blue: 1.0), Color(red: 1.0, green: 0.9, blue: 0.8)]
+=======
+>>>>>>> Stashed changes
                 VibeOutfit(
                     category: "earth goddess 🌸",
                     outfit: "flowing dress + sandals + flower crown",
@@ -1494,10 +2101,28 @@ enum VibeTheme: CaseIterable {
                     earrings: "feather earrings for wanderlust vibes",
                     vibe: "soulful beauty",
                     colors: [.yellow, .green]
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 )
             ]
         case .adventurous:
             return [
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                Outfit(
+                    name: "princess polly halter mini dress",
+                    emoji: "🪩",
+                    description: "giving main character energy with that iconic disco glam aesthetic",
+                    vibe: "sparkly queen",
+                    items: ["disco ball dress", "sparkly jewelry", "glitter heels", "shimmer makeup"],
+                    price: "$$$$$",
+                    category: "Disco",
+                    colorScheme: [Color(red: 0.8, green: 0.8, blue: 1.0), Color(red: 1.0, green: 0.9, blue: 0.8)]
+=======
+>>>>>>> Stashed changes
                 VibeOutfit(
                     category: "wild child 🚀",
                     outfit: "leather jacket + ripped jeans + combat boots",
@@ -1521,10 +2146,55 @@ enum VibeTheme: CaseIterable {
                     earrings: "sporty studs for active lifestyle",
                     vibe: "city explorer",
                     colors: [.pink, .orange]
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 )
             ]
         case .luxury:
             return [
+<<<<<<< Updated upstream
+                VibeOutfit(
+                    category: "royal elegance 👑",
+                    outfit: "designer gown + diamond jewelry + updo",
+                    makeup: "flawless base + red lips + winged liner",
+                    earrings: "diamond studs that sparkle like stars",
+                    vibe: "regal presence",
+                    colors: [.gold, .purple]
+=======
+<<<<<<< HEAD
+                Outfit(
+                    name: "princess polly halter mini dress",
+                    emoji: "🪩",
+                    description: "giving main character energy with that iconic disco glam aesthetic",
+                    vibe: "sparkly queen",
+                    items: ["disco ball dress", "sparkly jewelry", "glitter heels", "shimmer makeup"],
+                    price: "$$$$$",
+                    category: "Disco",
+                    colorScheme: [Color(red: 0.8, green: 0.8, blue: 1.0), Color(red: 1.0, green: 0.9, blue: 0.8)]
+>>>>>>> Stashed changes
+                ),
+                VibeOutfit(
+                    category: "luxury casual ✨",
+                    outfit: "cashmere sweater + silk pants + loafers",
+                    makeup: "natural glow + defined brows + nude lips",
+                    earrings: "gold hoops with pearl accents",
+                    vibe: "understated wealth",
+                    colors: [.cream, .gold]
+                ),
+<<<<<<< Updated upstream
+=======
+                Outfit(
+                    name: "luxury bag essentials",
+                    emoji: "✨",
+                    description: "timeless sparkle with that iconic diva energy",
+                    vibe: "timeless glamour",
+                    items: ["sparkly lehenga", "traditional jewelry", "glitter accessories", "shimmer dupatta"],
+                    price: "$$$$$",
+                    category: "Traditional",
+                    colorScheme: [Color(red: 1.0, green: 0.8, blue: 0.0), Color(red: 0.9, green: 0.7, blue: 1.0)]
+=======
                 VibeOutfit(
                     category: "royal elegance 👑",
                     outfit: "designer gown + diamond jewelry + updo",
@@ -1541,6 +2211,7 @@ enum VibeTheme: CaseIterable {
                     vibe: "understated wealth",
                     colors: [.cream, .gold]
                 ),
+>>>>>>> Stashed changes
                 VibeOutfit(
                     category: "evening opulence 💎",
                     outfit: "sequin dress + fur stole + stilettos",
@@ -1548,10 +2219,28 @@ enum VibeTheme: CaseIterable {
                     earrings: "chandelier earrings with precious stones",
                     vibe: "luxury personified",
                     colors: [.purple, .gold]
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 )
             ]
         case .bold:
             return [
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                Outfit(
+                    name: "princess polly halter mini dress",
+                    emoji: "🪩",
+                    description: "giving main character energy with that iconic disco glam aesthetic",
+                    vibe: "sparkly queen",
+                    items: ["disco ball dress", "sparkly jewelry", "glitter heels", "shimmer makeup"],
+                    price: "$$$$$",
+                    category: "Disco",
+                    colorScheme: [Color(red: 0.8, green: 0.8, blue: 1.0), Color(red: 1.0, green: 0.9, blue: 0.8)]
+=======
+>>>>>>> Stashed changes
                 VibeOutfit(
                     category: "power babe 🔥",
                     outfit: "black blazer + red dress + stilettos",
@@ -1575,6 +2264,10 @@ enum VibeTheme: CaseIterable {
                     earrings: "geometric gold earrings for authority",
                     vibe: "natural leader",
                     colors: [.purple, .black]
+<<<<<<< Updated upstream
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                 )
             ]
         }
@@ -1589,6 +2282,13 @@ struct VibeOutfit {
     let earrings: String
     let vibe: String
     let colors: [Color]
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    let imageNames: [String]
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
 }
 
 // MARK: - Vibe Outfit Card
@@ -1616,6 +2316,37 @@ struct VibeOutfitCard: View {
                     )
             }
             
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            // Image gallery for the outfit
+            if !outfit.imageNames.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 15) {
+                        ForEach(outfit.imageNames, id: \.self) { imageName in
+                            AsyncImage(url: Bundle.main.url(forResource: imageName, withExtension: nil)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 120, height: 120)
+                                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                            } placeholder: {
+                                // If the async image fails, use the regular Image
+                                Image(imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 120, height: 120)
+                                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 5)
+                }
+            }
+            
+=======
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
             VStack(spacing: 15) {
                 VibeOutfitDetail(
                     title: "fit",
@@ -1682,7 +2413,15 @@ struct VibeOutfitDetail: View {
                 
                 Text(detail)
                     .font(.system(size: 13, weight: .medium))
+<<<<<<< Updated upstream
                     .foregroundColor(.black.opacity(0.8))
+=======
+<<<<<<< HEAD
+                .foregroundColor(.black.opacity(0.8))
+=======
+                    .foregroundColor(.black.opacity(0.8))
+>>>>>>> a5513a5 (changed analysisview)
+>>>>>>> Stashed changes
                     .lineLimit(2)
             }
             
@@ -1693,6 +2432,7 @@ struct VibeOutfitDetail: View {
         .background(
             RoundedRectangle(cornerRadius: 16)
                 .fill(color.opacity(0.08))
+<<<<<<< HEAD
                 .stroke(color.opacity(0.2), lineWidth: 1)
         )
     }
@@ -1797,11 +2537,120 @@ struct DatingRecommendation: View {
         .background(
             RoundedRectangle(cornerRadius: 15)
                 .fill(Color.white.opacity(0.8))
+=======
+>>>>>>> a5513a5 (changed analysisview)
                 .stroke(color.opacity(0.2), lineWidth: 1)
         )
     }
 }
 
+<<<<<<< HEAD
+=======
+// MARK: - Dating Recommendations Card
+struct DatingRecommendationsCard: View {
+    var body: some View {
+        VStack(spacing: 18) {
+            Text("dating recommendations ✨")
+                .font(.system(size: 18, weight: .bold))
+                .foregroundColor(.pink)
+            
+            VStack(spacing: 12) {
+                DatingRecommendation(
+                    name: "alex",
+                    age: "26",
+                    vibe: "emotionally available and ready",
+                    match: "89%",
+                    color: .pink
+                )
+                
+                DatingRecommendation(
+                    name: "jordan",
+                    age: "28",
+                    vibe: "mature energy, good communication",
+                    match: "92%",
+                    color: .purple
+                )
+                
+                DatingRecommendation(
+                    name: "riley",
+                    age: "25",
+                    vibe: "adventurous but grounded",
+                    match: "85%",
+                    color: .orange
+                )
+            }
+        }
+        .padding(25)
+        .background(
+            RoundedRectangle(cornerRadius: 25)
+                .fill(
+                    LinearGradient(
+                        colors: [Color.white.opacity(0.95), Color.pink.opacity(0.05)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .shadow(color: .pink.opacity(0.15), radius: 12, x: 0, y: 6)
+        )
+    }
+}
+
+struct DatingRecommendation: View {
+    let name: String
+    let age: String
+    let vibe: String
+    let match: String
+    let color: Color
+    
+    var body: some View {
+        HStack(spacing: 15) {
+            Circle()
+                .fill(color.opacity(0.2))
+                .frame(width: 45, height: 45)
+                .overlay(
+                    Text(name.prefix(1).uppercased())
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundColor(color)
+                )
+            
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text(name)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(color)
+                    
+                    Text(age)
+                        .font(.system(size: 13, weight: .medium))
+                        .foregroundColor(.purple.opacity(0.7))
+                }
+                
+                Text(vibe)
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundColor(.purple.opacity(0.6))
+            }
+            
+            Spacer()
+            
+            VStack(spacing: 4) {
+                Text(match)
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundColor(color)
+                
+                Text("match")
+                    .font(.system(size: 10, weight: .medium))
+                    .foregroundColor(.purple.opacity(0.6))
+            }
+        }
+        .padding(15)
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white.opacity(0.8))
+                .stroke(color.opacity(0.2), lineWidth: 1)
+        )
+    }
+}
+
+>>>>>>> a5513a5 (changed analysisview)
 // MARK: - Floating Sparkles
 struct FloatingSparkle {
     var x: CGFloat = CGFloat.random(in: -50...400)
