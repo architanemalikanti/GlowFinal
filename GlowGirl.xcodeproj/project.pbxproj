@@ -14,11 +14,17 @@
 		899C39612E1CFB34003DBF52 /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39602E1CFB34003DBF52 /* MainAppView.swift */; };
 		899C39632E1CFB38003DBF52 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39622E1CFB38003DBF52 /* DashboardView.swift */; };
 		899C39652E1CFB3A003DBF52 /* DashboardHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */; };
-		899C39672E1CFB3B003DBF52 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39662E1CFB3B003DBF52 /* ProfileView.swift */; };
 		899C396F2E1CFB44003DBF52 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C396E2E1CFB44003DBF52 /* MessageBubble.swift */; };
 		899C39742E1CFB4D003DBF52 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39702E1CFB4C003DBF52 /* AuthManager.swift */; };
 		899C397A2E1FCB5A003DBF52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C39792E1FCB5A003DBF52 /* ContentView.swift */; };
 		899C397C2E1FCB86003DBF52 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899C397B2E1FCB86003DBF52 /* APIServices.swift */; };
+		89C67A8F2E3B2A9E007BFE56 /* DeepikaGlamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A8E2E3B2A9E007BFE56 /* DeepikaGlamView.swift */; };
+		89C67A912E3B2CA0007BFE56 /* DeepikaOutfitCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A902E3B2CA0007BFE56 /* DeepikaOutfitCard.swift */; };
+		89C67A932E3B2CDF007BFE56 /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A922E3B2CDF007BFE56 /* Outfit.swift */; };
+		89C67A942E3B3F49007BFE56 /* Assets.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 899C39712E1CFB4D003DBF52 /* Assets.xcassets */; };
+		89C67A982E405DBE007BFE56 /* IntroductionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A972E405DBE007BFE56 /* IntroductionPage.swift */; };
+		89C67A9A2E405F46007BFE56 /* ChatbotSignUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A992E405F46007BFE56 /* ChatbotSignUpPage.swift */; };
+		89C67A9C2E406906007BFE56 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A9B2E406906007BFE56 /* ChatService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,13 +36,18 @@
 		899C39602E1CFB34003DBF52 /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		899C39622E1CFB38003DBF52 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHomeView.swift; sourceTree = "<group>"; };
-		899C39662E1CFB3B003DBF52 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		899C396E2E1CFB44003DBF52 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		899C39702E1CFB4C003DBF52 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		899C39712E1CFB4D003DBF52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		899C39732E1CFB4D003DBF52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		899C39792E1FCB5A003DBF52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		899C397B2E1FCB86003DBF52 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		89C67A8E2E3B2A9E007BFE56 /* DeepikaGlamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepikaGlamView.swift; sourceTree = "<group>"; };
+		89C67A902E3B2CA0007BFE56 /* DeepikaOutfitCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepikaOutfitCard.swift; sourceTree = "<group>"; };
+		89C67A922E3B2CDF007BFE56 /* Outfit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
+		89C67A972E405DBE007BFE56 /* IntroductionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPage.swift; sourceTree = "<group>"; };
+		89C67A992E405F46007BFE56 /* ChatbotSignUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotSignUpPage.swift; sourceTree = "<group>"; };
+		89C67A9B2E406906007BFE56 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,20 +64,18 @@
 		89723D8D2E01F6E100363ED7 = {
 			isa = PBXGroup;
 			children = (
+				89C67A8C2E3B2A82007BFE56 /* Girls */,
+				89C67A8B2E3B26C0007BFE56 /* DashboardViewPages */,
+				89C67A8A2E3B25A8007BFE56 /* FirstPhasePages */,
 				899C397B2E1FCB86003DBF52 /* APIServices.swift */,
-				899C396E2E1CFB44003DBF52 /* MessageBubble.swift */,
-				899C395C2E1CFB2F003DBF52 /* AnalysisView.swift */,
 				899C395E2E1CFB32003DBF52 /* GlowGirlViewModel.swift */,
-				899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */,
-				899C39622E1CFB38003DBF52 /* DashboardView.swift */,
 				899C39792E1FCB5A003DBF52 /* ContentView.swift */,
+				89C67A972E405DBE007BFE56 /* IntroductionPage.swift */,
+				89C67A992E405F46007BFE56 /* ChatbotSignUpPage.swift */,
+				89C67A9B2E406906007BFE56 /* ChatService.swift */,
 				899C39712E1CFB4D003DBF52 /* Assets.xcassets */,
 				899C39722E1CFB4D003DBF52 /* Preview Content */,
 				899C39702E1CFB4C003DBF52 /* AuthManager.swift */,
-				899C39602E1CFB34003DBF52 /* MainAppView.swift */,
-				899C39662E1CFB3B003DBF52 /* ProfileView.swift */,
-				899C39542E1CFAF8003DBF52 /* GlowGirlApp.swift */,
-				897CCC4B2E0777F600D5274B /* LoginView1.swift */,
 				89723D972E01F6E100363ED7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +94,45 @@
 				899C39732E1CFB4D003DBF52 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		89C67A8A2E3B25A8007BFE56 /* FirstPhasePages */ = {
+			isa = PBXGroup;
+			children = (
+				899C39542E1CFAF8003DBF52 /* GlowGirlApp.swift */,
+				899C39602E1CFB34003DBF52 /* MainAppView.swift */,
+				897CCC4B2E0777F600D5274B /* LoginView1.swift */,
+				899C39622E1CFB38003DBF52 /* DashboardView.swift */,
+			);
+			path = FirstPhasePages;
+			sourceTree = "<group>";
+		};
+		89C67A8B2E3B26C0007BFE56 /* DashboardViewPages */ = {
+			isa = PBXGroup;
+			children = (
+				899C396E2E1CFB44003DBF52 /* MessageBubble.swift */,
+				899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */,
+				899C395C2E1CFB2F003DBF52 /* AnalysisView.swift */,
+			);
+			path = DashboardViewPages;
+			sourceTree = "<group>";
+		};
+		89C67A8C2E3B2A82007BFE56 /* Girls */ = {
+			isa = PBXGroup;
+			children = (
+				89C67A8D2E3B2A92007BFE56 /* Deepika */,
+				89C67A922E3B2CDF007BFE56 /* Outfit.swift */,
+			);
+			path = Girls;
+			sourceTree = "<group>";
+		};
+		89C67A8D2E3B2A92007BFE56 /* Deepika */ = {
+			isa = PBXGroup;
+			children = (
+				89C67A8E2E3B2A9E007BFE56 /* DeepikaGlamView.swift */,
+				89C67A902E3B2CA0007BFE56 /* DeepikaOutfitCard.swift */,
+			);
+			path = Deepika;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,15 +203,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C67A982E405DBE007BFE56 /* IntroductionPage.swift in Sources */,
+				89C67A942E3B3F49007BFE56 /* Assets.xcassets in Sources */,
 				897CCC4C2E0777F600D5274B /* LoginView1.swift in Sources */,
 				899C39742E1CFB4D003DBF52 /* AuthManager.swift in Sources */,
+				89C67A9A2E405F46007BFE56 /* ChatbotSignUpPage.swift in Sources */,
+				89C67A9C2E406906007BFE56 /* ChatService.swift in Sources */,
 				899C397A2E1FCB5A003DBF52 /* ContentView.swift in Sources */,
+				89C67A8F2E3B2A9E007BFE56 /* DeepikaGlamView.swift in Sources */,
 				899C39612E1CFB34003DBF52 /* MainAppView.swift in Sources */,
 				899C396F2E1CFB44003DBF52 /* MessageBubble.swift in Sources */,
+				89C67A932E3B2CDF007BFE56 /* Outfit.swift in Sources */,
 				899C39652E1CFB3A003DBF52 /* DashboardHomeView.swift in Sources */,
+				89C67A912E3B2CA0007BFE56 /* DeepikaOutfitCard.swift in Sources */,
 				899C39632E1CFB38003DBF52 /* DashboardView.swift in Sources */,
 				899C39552E1CFAF8003DBF52 /* GlowGirlApp.swift in Sources */,
-				899C39672E1CFB3B003DBF52 /* ProfileView.swift in Sources */,
 				899C395F2E1CFB32003DBF52 /* GlowGirlViewModel.swift in Sources */,
 				899C395D2E1CFB2F003DBF52 /* AnalysisView.swift in Sources */,
 				899C397C2E1FCB86003DBF52 /* APIServices.swift in Sources */,

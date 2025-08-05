@@ -11,7 +11,9 @@ import SwiftUI
 struct GlowGirlApp: App {
     var body: some Scene {
         WindowGroup {
-            MainAppView()
+            //MainAppView()
+            //for now i'm putting it as ChatbotSignUpPage. just to test.
+            ChatbotSignUpPage()
         }
     }
 }

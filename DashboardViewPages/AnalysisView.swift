@@ -8,8 +8,6 @@ struct AnalysisView: View {
     }
 }
 
-
-
 // MARK: - Color Extensions
 extension Color {
     static let cream = Color(red: 0.98, green: 0.96, blue: 0.92)
@@ -19,4 +17,4 @@ extension Color {
 #Preview {
     AnalysisView()
         .environmentObject(GlowGirlViewModel())
-} 
+}

@@ -17,36 +17,7 @@ enum RecommendationType: String, CaseIterable, Codable {
     case clothing = "Clothing"
 }
 
-// MARK: - Beauty Recommendation Model (for backwards compatibility)
-struct BeautyRecommendation: Identifiable, Codable {
-    let id: UUID
-    let title: String
-    let description: String
-    let price: String?
-    let reasoning: String
-    let category: RecommendationType
-    let brand: String?
-    let imageURL: String?
-    
-    init(
-        title: String,
-        description: String,
-        price: String? = nil,
-        reasoning: String,
-        category: RecommendationType,
-        brand: String? = nil,
-        imageURL: String? = nil
-    ) {
-        self.id = UUID()
-        self.title = title
-        self.description = description
-        self.price = price
-        self.reasoning = reasoning
-        self.category = category
-        self.brand = brand
-        self.imageURL = imageURL
-    }
-}
+
 
 class GlowGirlViewModel: ObservableObject {
     // MARK: - State Management
@@ -59,8 +30,6 @@ class GlowGirlViewModel: ObservableObject {
     @Published var showAnalysisView = false
     
     // MARK: - Legacy Support
-    @Published var recommendations: [BeautyRecommendation] = []
-    @Published var teaAnalysis: TeaAnalysis?
     
     // MARK: - Voice recording properties
     @Published var recordingURL: URL?
@@ -155,8 +124,6 @@ class GlowGirlViewModel: ObservableObject {
     func resetSession() {
         resetAnalysis()
         print("reset analysis called in reset sesh")
-        recommendations = []
-        teaAnalysis = nil
     }
 }
 
