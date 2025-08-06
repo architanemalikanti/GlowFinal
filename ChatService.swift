@@ -46,6 +46,28 @@ class ChatService: ObservableObject {
         let chatResponse = try JSONDecoder().decode(ChatResponse.self, from: data)
         return chatResponse
     }
+    
+    func getInitialMessage() async throws -> ChatResponse {
+        guard let url = URL(string: "\(baseURL)/initial-message") else {
+            throw ChatError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw ChatError.invalidResponse
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            throw ChatError.serverError(httpResponse.statusCode)
+        }
+        
+        let chatResponse = try JSONDecoder().decode(ChatResponse.self, from: data)
+        return chatResponse
+    }
 }
 
 enum ChatError: Error, LocalizedError {

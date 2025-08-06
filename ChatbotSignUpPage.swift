@@ -15,11 +15,17 @@ struct ChatMessage {
 }
 
 struct ChatbotSignUpPage: View {
-    @State private var messages: [ChatMessage] = [
-        ChatMessage(content: "heyyyy babe! 🌟 let's get you signed up and ready to slay! first things first, what's your name, queen? 💖", isUser: false, timestamp: Date())
-    ]
+    @State private var messages: [ChatMessage] = []
     @State private var currentMessage = ""
     @State private var isTyping = false
+    
+    // Store the initial messages to send sequentially
+    private let initialMessages = [
+        "HEY BABE!!!! i'm Glow <3 your ride-or-die glow up bestie 😌💖",
+        "we're not just healing — we're entering your hot girl villain era and looking unreal while doing it. buckle up.",
+        "you vent. i decode the drama. and then? i serve you OUTFITS that match your emotional plotline. we're glowing up out of SPITE, STYLE, and straight-up DELUSION 💅🔥",
+        "LET'S GLOW TF UP WOOOOOO 💔🕶️🍾"
+    ]
     
     // ADD THESE NEW STATE VARIABLES:
     @State private var showError = false
@@ -100,6 +106,9 @@ struct ChatbotSignUpPage: View {
             }
         }
         .navigationBarHidden(true)
+        .onAppear {
+            sendInitialMessages()
+        }
         // ADD THESE NEW MODIFIERS:
         .alert("Connection Error", isPresented: $showError) {
             Button("OK") { }
@@ -112,6 +121,25 @@ struct ChatbotSignUpPage: View {
         }
     }
     
+    private func sendInitialMessages() {
+        for (index, messageContent) in initialMessages.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(index) * 1.0) {
+                // Show typing indicator
+                if index < initialMessages.count - 1 {
+                    isTyping = true
+                }
+                
+                let message = ChatMessage(content: messageContent, isUser: false, timestamp: Date())
+                messages.append(message)
+                
+                // Hide typing indicator after a short delay
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    isTyping = false
+                }
+            }
+        }
+    }
+
     private func sendMessage() {
         guard !currentMessage.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
         
@@ -145,7 +173,7 @@ struct ChatbotSignUpPage: View {
             } catch {
                 await MainActor.run {
                     isTyping = false
-                    errorMessage = "Oops! Something went wrong. Try again bestie! 💕"
+                    errorMessage = "uhhh babe??? the server's acting like your ex — completely unreliable and giving nothing. try again in a sec, and if it still doesn’t work… just refresh😭💅"
                     showError = true
                     
                     // Add error message to chat
