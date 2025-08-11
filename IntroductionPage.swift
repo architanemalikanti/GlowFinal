@@ -99,7 +99,8 @@ struct IntroductionPage: View {
                 }
             }
             .fullScreenCover(isPresented: $navigateToChatbot) {
-                ChatbotSignUpPage()
+                //ChatbotSignUpPage()
+                DashboardHomeView()
             }
         }
     }

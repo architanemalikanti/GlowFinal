@@ -4,7 +4,8 @@ struct AnalysisView: View {
     @EnvironmentObject var viewModel: GlowGirlViewModel
     
     var body: some View {
-        DeepikaGlamView()
+        DatingRecommendationView()
+            .environmentObject(viewModel)
     }
 }
 

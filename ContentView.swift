@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var authManager = AuthManager()
+    @StateObject private var glowViewModel = GlowGirlViewModel()
+    
     var body: some View {
         //introduction page is the first page you see when you first install the app.
-        IntroductionPage()
+        //IntroductionPage()
+        DashboardHomeView()
+            .environmentObject(authManager)
+            .environmentObject(glowViewModel)
     }
 }
 

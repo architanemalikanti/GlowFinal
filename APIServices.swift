@@ -135,40 +135,19 @@ enum SpeechError: Error {
 // MARK: - Backend API Service
 class GlowUpAPIService {
     static let shared = GlowUpAPIService()
-    private let baseURL = "https://glow-up-backend.onrender.com/" // Your Flask backend URL
+    private let baseURL = "https://glow-app-lhi6n.ondigitalocean.app" // Your REAL backend URL
     
     private init() {}
     
     func getGlowUpAdvice(ventText: String) async throws -> GlowUpResponse {
-        guard let url = URL(string: "\(baseURL)/api/glow-up-advice") else {
-            throw APIError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        // Add auth token if you have authentication
-        if let token = UserDefaults.standard.string(forKey: "authToken") {
-            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-        
-        let requestBody = ["vent_text": ventText]
-        request.httpBody = try JSONSerialization.data(withJSONObject: requestBody)
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
-        
-        guard httpResponse.statusCode == 200 else {
-            throw APIError.serverError("HTTP \(httpResponse.statusCode)")
-
-        }
-        
-        let decoder = JSONDecoder()
-        return try decoder.decode(GlowUpResponse.self, from: data)
+        // For now, just return mock data since we're using dating matches instead
+        return GlowUpResponse(
+            message: "Analysis complete! Check your dating matches! 💕",
+            makeupRecommendations: [],
+            outfitRecommendations: [],
+            quickWins: ["You're amazing!", "Your energy is perfect!", "Ready for love!"],
+            transformationPlan: "Your dating recommendations are ready!"
+        )
     }
     
     // Test connection to backend

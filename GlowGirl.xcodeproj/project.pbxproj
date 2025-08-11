@@ -25,6 +25,7 @@
 		89C67A982E405DBE007BFE56 /* IntroductionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A972E405DBE007BFE56 /* IntroductionPage.swift */; };
 		89C67A9A2E405F46007BFE56 /* ChatbotSignUpPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A992E405F46007BFE56 /* ChatbotSignUpPage.swift */; };
 		89C67A9C2E406906007BFE56 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C67A9B2E406906007BFE56 /* ChatService.swift */; };
+		89E550BC2E49685700AF6936 /* DatingRecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E550BB2E49685700AF6936 /* DatingRecommendationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		89C67A972E405DBE007BFE56 /* IntroductionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionPage.swift; sourceTree = "<group>"; };
 		89C67A992E405F46007BFE56 /* ChatbotSignUpPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatbotSignUpPage.swift; sourceTree = "<group>"; };
 		89C67A9B2E406906007BFE56 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		89E550BB2E49685700AF6936 /* DatingRecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatingRecommendationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				899C396E2E1CFB44003DBF52 /* MessageBubble.swift */,
 				899C39642E1CFB3A003DBF52 /* DashboardHomeView.swift */,
 				899C395C2E1CFB2F003DBF52 /* AnalysisView.swift */,
+				89E550BB2E49685700AF6936 /* DatingRecommendationsView.swift */,
 			);
 			path = DashboardViewPages;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				897CCC4C2E0777F600D5274B /* LoginView1.swift in Sources */,
 				899C39742E1CFB4D003DBF52 /* AuthManager.swift in Sources */,
 				89C67A9A2E405F46007BFE56 /* ChatbotSignUpPage.swift in Sources */,
+				89E550BC2E49685700AF6936 /* DatingRecommendationsView.swift in Sources */,
 				89C67A9C2E406906007BFE56 /* ChatService.swift in Sources */,
 				899C397A2E1FCB5A003DBF52 /* ContentView.swift in Sources */,
 				89C67A8F2E3B2A9E007BFE56 /* DeepikaGlamView.swift in Sources */,

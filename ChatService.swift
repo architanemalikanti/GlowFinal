@@ -9,8 +9,8 @@ import Foundation
 
 class ChatService: ObservableObject {
     // CHANGE THIS URL TO YOUR SERVER'S ADDRESS
-    private let baseURL = "http://127.0.0.1:5000" // For local testing
-    // private let baseURL = "http://YOUR_SERVER_IP:5000" // For real deployment
+    // private let baseURL = "http://127.0.0.1:5000" // For local testing
+    private let baseURL = "https://glow-app-lhi6n.ondigitalocean.app" // For real deployment
     
     struct ChatRequest: Codable {
         let message: String
@@ -48,25 +48,8 @@ class ChatService: ObservableObject {
     }
     
     func getInitialMessage() async throws -> ChatResponse {
-        guard let url = URL(string: "\(baseURL)/initial-message") else {
-            throw ChatError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        
-        let (data, response) = try await URLSession.shared.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw ChatError.invalidResponse
-        }
-        
-        guard httpResponse.statusCode == 200 else {
-            throw ChatError.serverError(httpResponse.statusCode)
-        }
-        
-        let chatResponse = try JSONDecoder().decode(ChatResponse.self, from: data)
-        return chatResponse
+        // Send a simple hello message to get the initial greeting from Glow
+        return try await sendMessage("hello")
     }
 }
 
